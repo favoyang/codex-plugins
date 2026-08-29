@@ -9,7 +9,7 @@
       "source": {
         "source": "npm",
         "package": "taskchef",
-        "version": "7.22.5",
+        "version": "7.23.0",
         "registry": "https://registry.npmjs.org"
       },
       "policy": {
