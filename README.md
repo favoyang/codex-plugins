@@ -1,37 +1,29 @@
 # Favo Yang Plugins
 
-Shared Codex plugin marketplace maintained by Favo Yang.
+Shared Codex plugin marketplace maintained by Favo Yang. The catalog currently
+contains no plugins.
 
-## Install
+## TaskChef has moved
 
-Add this marketplace once:
-
-```sh
-codex plugin marketplace add favoyang/codex-plugins
-```
-
-Install TaskChef:
+TaskChef now owns its marketplace in the [TaskChef repository](https://github.com/favoyang/taskchef).
+Add its marketplace and install the released plugin:
 
 ```sh
-codex plugin add taskchef@favoyang-plugins
+codex plugin marketplace add favoyang/taskchef
+codex plugin add taskchef@taskchef
 ```
 
-Start a new Codex task after installing or updating a plugin so Codex loads its
-skills and tools.
+After the new installation succeeds, remove `taskchef@favoyang-plugins` and
+restart Codex. Keep only one released TaskChef installation enabled. TaskChef
+Dev uses a separate local marketplace and can stay enabled. Settings, GitHub
+credentials, and Codex chat history do not need to be reset.
 
-## Available plugins
-
-- [TaskChef](https://github.com/favoyang/taskchef) dispatches actionable work
-  from a data-only workspace to independently openable Codex project tasks.
+```sh
+codex plugin remove taskchef@favoyang-plugins
+```
 
 ## Maintenance
 
-The ordered `plugins` array in `.agents/plugins/marketplace.json` is the
-catalog. Plugin source code remains in each plugin's owning repository.
-
-Validate the catalog after changing it:
-
-```sh
-codex plugin marketplace add .
-codex plugin list
-```
+The ordered `plugins` array in `.agents/plugins/marketplace.json` is the catalog.
+Each plugin's source code and release workflow belong to its owning repository.
+TaskChef's release workflow no longer updates this catalog.
